@@ -101,8 +101,8 @@ function calculate(a, b) {
 // If you use let inside of a block, i.e. a for loop, the variable is only available inside of that loop.
 // let has a block scope.
 
-// --CONST-- does not define a constant value. It defines a constant reference to a value.
-//const has a block scope.
+// --CONST-- It has a block scope.
+// Does not define a constant value. It defines a constant reference to a value.
 // Because of this you can NOT:
 // Reassign a constant value, array and object
 
