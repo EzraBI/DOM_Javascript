@@ -628,7 +628,7 @@ prompt();
 confirm();
     
 
-//--DATES IN JAVASCRIPT--
+//--DATES IN JAVASCRIPT----
    
 
 // Dates in JavaScript are objects so you have to create a new date.
