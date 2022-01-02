@@ -119,6 +119,9 @@ You can prevent events from being sent or being handled -->
     <button onclick="document.getElementById('demo').innerHTML=Date()">The time is?</button>
 
     <p id="demo"></p>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
 </div>
 <div>
     <script>
@@ -140,5 +143,103 @@ You can prevent events from being sent or being handled -->
           "My car is " + myCar1.age() + " years old.";
     </script>
 </div>
+
+<script>
+  //--Function Sequence--
+  //JavaScript functions are executed in the sequence they are called. 
+  //Not in the sequence they are defined.
+  function myDisplayer(some) {
+    document.getElementById("demo2").innerHTML = some;
+  }
+
+  function myDisplayer2(s){
+    document.getElementById("demo2").innerHTML = s;
+  }
+  
+  function myFirst() {
+    myDisplayer("Hello");
+  }
+
+
+  function mySecond() {
+    myDisplayer2("Goodbye");
+  }
+  
+  mySecond();
+  myFirst();
+
+  </script>
+
+<script>
+  //A callback is a function passed as an argument to another function.
+  function myDisplayer(some) {
+    document.getElementById("demo3").innerHTML = some;
+  }
+  
+  function myCalculator(num1, num2, myCallback) {
+    let sum = num1 + num2;
+    myCallback(sum);
+  }
+  
+  myCalculator(5, 5, myDisplayer);
+  </script>
+
+<p>Wait 3 seconds (3000 milliseconds) for this page to change.</p>
+
+<h1 id="demo4"></h1>
+<!-- Asynchronous Functions -->
+<!-- setTimeout -->
+<script>
+  //Asynchronous Functions runs in parallel with other functions
+  setTimeout(myFunction, 3000);
+
+function myFunction() {
+  document.getElementById("demo4").innerHTML = "I love You !!";
+}
+</script>
+<!-- setInterval -->
+<p>Using setInterval() to display the time every second (1000 milliseconds).</p>
+
+<h1 id="demo5"></h1>
+
+<script>
+setInterval(myFunction, 1000);
+
+function myFunction() {
+  let d = new Date();
+  document.getElementById("demo5").innerHTML=
+  d.getHours() + ":" +
+  d.getMinutes() + ":" +
+  d.getSeconds();
+}
+</script>
+
+<h2>JavaScript Callbacks</h2>
+
+<p id="demo6"></p>
+
+<script>
+function myDisplayer(some) {
+  document.getElementById("demo6").innerHTML = some;
+}
+
+function getFile(myCallback) {
+  let req = new XMLHttpRequest();
+  req.open('GET', "mycar.html");
+  req.onload = function() {
+    if (req.status == 200) {
+      myCallback(this.responseText);
+    } else {
+      myCallback("Error: " + req.status);
+    }
+  }
+  req.send();
+}
+
+getFile(myDisplayer); 
+</script>
+
+  
+
 </body>
 </html>
