@@ -214,6 +214,8 @@ function myFunction() {
 }
 </script>
 
+
+
 <h2>JavaScript Callbacks</h2>
 
 <p id="demo6"></p>
@@ -224,7 +226,7 @@ function myDisplayer(some) {
 }
 
 function getFile(myCallback) {
-  let req = new XMLHttpRequest();
+  let req = new XMLHttpRequest(); //XMLHttpRequest object can be used to exchange data with a web server behind the scenes. This means that it is possible to update parts of a web page, without reloading the whole page.
   req.open('GET', "mycar.html");
   req.onload = function() {
     if (req.status == 200) {

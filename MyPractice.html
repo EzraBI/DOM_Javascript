@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Promise</h2>
+
+<p id="demo"></p>
+<p id="app1"></p>
+<script>
+function myDisplayer(some) {
+  document.getElementById("demo").innerHTML = some;
+}
+
+let myPromise = new Promise(function(myResolve, myReject) {
+  let x = 0;
+
+// some code (try to change x to 5)
+
+  if (x == 0) {
+    myResolve("OKay1");
+  } else {
+    myReject("Error");
+  }
+});
+
+myPromise.then(
+  function(value) {myDisplayer(value);},
+  function(error) {myDisplayer(error);}
+);
+</script>
+
+
+<div id="app"></div>
+<script>
+    
+    //TEMPLATE LITERALS
+const product1 = 'Pizza';
+const price1 = 30;
+const product2 = 'Hamburger';
+const price2 = 40;
+
+// Old Method
+let html;
+html  = '<ul>'+
+        '<li>Item: ' + product1 + '</li>' +
+        '<li>Price: $ ' + price1 + '</li>' +
+        '<li>Item: ' + product2 + '</li>' +
+        '<li>Price: $ ' + price2 + '</li>' +
+        '<li>Total: $' + (price1 + price2) + '</li>';
+        '</ul>';
+
+// New method using Template Strings / Template Literals - they use back-ticks (``) to define a string:
+html = `
+    <ul>
+        <li>Item: ${product1}</li>
+        <li>Price: ${price1}</li>
+        <li>Item: ${product2}</li>
+        <li>Price: ${price2}</li>
+        <li>Total: ${total(price1, price2)}</li>
+    </ul>
+`;
+
+function total(param1, param2) {
+    return param1 + param2;
+}
+
+// HTML to inject the code
+
+let app = document.querySelector('#app');
+app.innerHTML = html ;
+</script>
+
+
+</body>
+</html>
