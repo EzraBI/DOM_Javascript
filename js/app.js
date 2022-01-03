@@ -95,7 +95,6 @@ function calculate(a, b) {
 // If you use var inside of a block, i.e. a for loop, the variable is still available outside of that block.
 // var has a function scope, not a block scope.
 
-
 // --LET--
 // let x = 5.6;
 // let is the block scoped version of var, and is limited to the block (or expression) where it is defined.
