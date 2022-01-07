@@ -74,6 +74,20 @@
                                 <form action="#" id="search" method="post" class="form">
                                     <input class="u-full-width" type="text" placeholder="What Do You Want To Learn? " id="search-course">
                                     <input type="submit" id="submit-search-course" class="submit-search-course">
+                                    <script> 
+
+                                            const searchForm = document.getElementById('search'),
+                                                searchInput = document.getElementById('search-course');
+
+                                                searchForm.addEventListener('submit', printEvent )
+
+                                                function printEvent(e){
+                                                    e.preventDefault();
+                                                    console.log(`Type: ${e.type}`)
+
+                                                }
+                                                                                
+                                    </script>
                                 </form>
                         </div>
                     </div>

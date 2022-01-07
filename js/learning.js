@@ -3666,21 +3666,21 @@
 // learning('JS', 'ES6');
 
 // // Arrow functions with a callback
-// const shoppingCart = ['Album', 'Shirt', 'Guitar'];
+const shoppingCart = ['Album', 'Shirt', 'Guitar'];
 
-// const productQuantity = shoppingCart.map(function(product) {
-//     return product.length;
-// });
+const productQuantity = shoppingCart.map(function(product) {
+    return product.length;
+});
 
-// // with arrow function arrow
-// const productQuantity = shoppingCart.map(product => {
-//     return product.length;
-// });
+// with arrow function arrow
+const productQuantity = shoppingCart.map(product => {
+    return product.length;
+});
 
-// // shorter way
-// const productQuantity = shoppingCart.map(product =>  product.length);
+// shorter way
+const productQuantity = shoppingCart.map(product =>  product.length);
 
-// // Example with for each
+// Example with for each
 
 
 
