@@ -22,7 +22,7 @@ heading.innerText = 'New Courses';
 
 //Query Selector - select id or class - systax similar to css 
 const learningHeading = document.querySelector('#learn');
-
+//selecting class
 const tagline = document.querySelector('.tagline');
 const newText = tagline.textContent.replace('$15','$10');
 
@@ -195,5 +195,30 @@ const updateMyVehicle = {
 }
 
 const myUpdatedVehicle = {...myVehicle, ...updateMyVehicle}
+
+//Event Listeners
+const searchForm = document.getElementById('search'),
+      searchInput = document.getElementById('search-course');
+
+	  searchForm.addEventListener('submit', printEvent )
+
+	  function printEvent(e){
+		  e.preventDefault();
+		  console.log(`Type: ${e.type}`)
+
+	  }
+
+//Callbacks
+	  const countries = ['USA','Ken','Ug','Tz'];
+//Inline Callbacks- without names
+	  forEach.countries(function(args){
+		  console.log(args)
+	  });
+
+	  document.getElementById('callback').innerHTML = args;
+
+
+
+
 //End of My Practice
 

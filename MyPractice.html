@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <body>
-
+<!-- JavaScript Promise
 <h2>JavaScript Promise</h2>
 
 <p id="demo"></p>
@@ -12,20 +12,26 @@ function myDisplayer(some) {
 }
 
 let myPromise = new Promise(function(myResolve, myReject) {
-  let x = 0;
 
-// some code (try to change x to 5)
+let x = 0;
+
+//Producing Code
 
   if (x == 0) {
-    myResolve("OKay1");
+    myResolve("OKay");
   } else {
     myReject("Error");
   }
 });
 
+//Consuming code
 myPromise.then(
-  function(value) {myDisplayer(value);},
-  function(error) {myDisplayer(error);}
+  function(value) {
+    myDisplayer(value);
+  },
+  function(error) {
+    myDisplayer(error);
+  }
 );
 </script>
 
@@ -68,6 +74,57 @@ function total(param1, param2) {
 
 let app = document.querySelector('#app');
 app.innerHTML = html ;
+</script> -->
+
+<!-- Callbacks -->
+
+<p>Callbacks</p>
+<div id="callback"></div>
+<script>
+
+const countries = ['USA','Ken','Ug','Tz'];
+//Ex 1
+//Inline Callbacks- without names
+countries.forEach(function(args){
+		  console.log(args)
+      //document.getElementById('callback').innerText = args;
+	  });
+
+//Ex 2
+//Callback with function declarion
+function callback(args) {
+  console.log(args)
+}
+countries.forEach(callback)
+
+//Ex 3
+//Display Countries after 1 second
+function displayCountries(){
+  setTimeout(function() {
+    let html = '';
+    countries.forEach(function(country){
+    html += `<li>${country}</li>`
+});
+document.getElementById('callback').innerHTML = html;
+  }, 1000);
+
+}  
+//print countries
+displayCountries();
+
+//Add new Country after 2 sec
+function newCountry(country, callback3){
+  setTimeout(function() {
+    //Add new Country to the end
+    countries.push(country)
+    //Execute the call back
+    callback3();
+  }, 2000);
+}
+//Display Countries with newly added country
+newCountry('France', displayCountries);
+
+
 </script>
 
 
